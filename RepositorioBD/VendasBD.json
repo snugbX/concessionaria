@@ -1,0 +1,34 @@
+[
+ {
+  "nome_cliente": "juca",
+  "cpf_cliente": "12345678935",
+  "produto": {
+   "id": 2,
+   "marca": "Chevrolet",
+   "modelo": "Onix",
+   "motor": "Turbo",
+   "ano": 2023,
+   "cor": "branco",
+   "valor": 96520.0,
+   "status": "Comprado"
+  },
+  "valor_total": 96520.0,
+  "data_venda": "15 - 09 - 2022"
+ },
+ {
+  "nome_cliente": "maria",
+  "cpf_cliente": "12345678974",
+  "produto": {
+   "id": 2,
+   "marca": "Chevrolet",
+   "modelo": "Onix",
+   "motor": "Turbo",
+   "ano": 2023,
+   "cor": "branco",
+   "valor": 96520.0,
+   "status": "Comprado"
+  },
+  "valor_total": 96520.0,
+  "data_venda": "15 - 09 - 2022"
+ }
+]

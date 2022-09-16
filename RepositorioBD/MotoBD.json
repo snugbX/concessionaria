@@ -1,0 +1,52 @@
+[
+ {
+  "id": 1,
+  "marca": "Honda",
+  "modelo": "Scooter Forza 350",
+  "motor": "OHC 330 cc",
+  "ano": 2023,
+  "cor": "preta",
+  "valor": 47000.0,
+  "status": null
+ },
+ {
+  "id": 2,
+  "marca": "Honda",
+  "modelo": "Scooter Elite 125",
+  "motor": "OHC 124,9 cc",
+  "ano": 2016,
+  "cor": "prata",
+  "valor": 11180.0,
+  "status": "Vendido"
+ },
+ {
+  "id": 3,
+  "marca": "Honda",
+  "modelo": "CB 250F Twister ABS",
+  "motor": "OHC 249,5 cc",
+  "ano": 2022,
+  "cor": "vermelha",
+  "valor": 19590.0,
+  "status": null
+ },
+ {
+  "id": 4,
+  "marca": "Honda",
+  "modelo": "CB 650R",
+  "motor": "DOHC 649 cc",
+  "ano": 2022,
+  "cor": "prata",
+  "valor": 48440.0,
+  "status": null
+ },
+ {
+  "id": 5,
+  "marca": "Honda",
+  "modelo": "CG 160 Fan",
+  "motor": "OHC 162,7 cc",
+  "ano": 2022,
+  "cor": "verde",
+  "valor": 13880.0,
+  "status": null
+ }
+]

@@ -1,0 +1,62 @@
+[
+ {
+  "id": 1,
+  "marca": "Chevrolet",
+  "modelo": "Cruze Sport6 RS",
+  "motor": "Turbo 153 CV",
+  "ano": 2022,
+  "cor": "vermelho",
+  "valor": 161650.0,
+  "status": null
+ },
+ {
+  "id": 2,
+  "marca": "Chevrolet",
+  "modelo": "Onix",
+  "motor": "Turbo",
+  "ano": 2023,
+  "cor": "branco",
+  "valor": 96520.0,
+  "status": null
+ },
+ {
+  "id": 3,
+  "marca": "Renault",
+  "modelo": "KWID",
+  "motor": "1.0 SCe",
+  "ano": 2022,
+  "cor": "Azul",
+  "valor": 71990.0,
+  "status": null
+ },
+ {
+  "id": 4,
+  "marca": "Renault",
+  "modelo": "Logan Zen",
+  "motor": "1.6 CVT",
+  "ano": 2023,
+  "cor": "verde fosco",
+  "valor": 88890.0,
+  "status": null
+ },
+ {
+  "id": 5,
+  "marca": "FIAT",
+  "modelo": "ARGO",
+  "motor": "1.3 Firefly",
+  "ano": 2023,
+  "cor": "prata fosco",
+  "valor": 87496.0,
+  "status": null
+ },
+ {
+  "id": 6,
+  "marca": "Fiat",
+  "modelo": "Strada",
+  "motor": "1.8",
+  "ano": 2023,
+  "cor": "verde",
+  "valor": 32900.0,
+  "status": null
+ }
+]

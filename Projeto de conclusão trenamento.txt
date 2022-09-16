@@ -1,0 +1,124 @@
+Projeto Final do Trenamento:
+__________________________________________________________________________________________________________________
+Linha de pensamento Visão do Usuario:
+
+	1 > O usuario entra no programa
+	2 > O programa mostra um 'menu1' de opções:
+		1 # Listar Veiculos
+		2 # Cadastrar-se
+		3 # Fazer Login
+		4 # Sair
+	Caso # 1 >  O programa Mostra todos os veiculos disponivel para compra e retorna para o 'Menu1'
+	Caso # 2 > O programa solicita os dados do usuario : 
+		1 > Nome
+		2 > senha 
+		3 > Valida os dados
+		4 > Salva os dados
+		5 > Efetua o Login
+		6 > Mostra Menu2
+			1 # Listar Veiculos
+			2 # Comprar Veiculo
+			3 # Sai da Conta do usuario
+	Caso # 3 > O programa solicita os dados do usuario
+		1 > Nome
+		2 > senha 
+		3 > Valida os dados
+		4 > Efetua o Login
+		5 > Mostra Menu2
+	Caso # 4 > O programa é finalizado
+
+#########################################################################################
+
+	Casos do 'Menu2':
+
+	1 # > O programa Mostra todos os veiculos disponivel para compra e retorna para o 'Menu2'
+	2 # > Mostra menu de compra:
+		1 > Consocio de Veiculo
+		2 > á vista
+
+	Caso 1 > Solicita dados para o Consocio
+		# Valida dados
+		# Salva os dados
+		# Mostra uma msg de Sucesso
+		# Retorna para o 'menu2'
+	caso  2 > Solicita dados Para compras á Vista
+		# Valida dados
+		# Salva os dados
+		# Mostra uma msg de Sucesso
+		# Retorna para o 'menu2'
+
+	3 # > Desloga da conta do usuario Retorna para o Menu1
+__________________________________________________________________________________________________________________
+
+Linha de Pensamento Visão Admin OBs(Caso dê tempo de Fazer prioridade na visão do Usuario):
+
+	1 > O usuario entra no programa
+	2 > O programa mostra um 'menu1' de opções:
+		1 # Fazer Login (Usuario admin Padrão)
+		2 # Sair
+	caso 1 > solicita dados de login Nome , senha.
+		#Valida
+		#Loga mostra o 'menu2'
+	caso 2 > Finaliza o programa
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+	Menu2:
+	1 > Cadastrar Conta admin
+	2 > Lista Veiculos
+	3 > Cadastra Veiculos
+	4 > Atualiza Banco De Dados de Veiculos
+	5 > Visualizar Vendas
+	6 > Desloga
+	 
+__________________________________________________________________________________________________________________
+
+Concessionária
+	Venda de Veiculos
+		Motocicletas
+		Carros
+
+Veiculo:
+	Codigo de Indentificação
+	Marca
+	Modelo
+	Motor
+	marcha_transmissão
+	ano
+	cor
+	Freio dianteiro
+	Freio traseiro
+
+Motocicleta:
+	estilo
+	partida
+	alimentação
+	refrigeração
+	
+Carro:
+	versão
+	Carroceria
+	tração
+	direção
+	suspenção dianteira
+	suspenção traseira
+	Freios ABS
+	Airbags
+	Número de Lugares
+	
+
+Sistema de login
+	Usuario
+	Admin
+
+Admin: 
+	Cadastrar Veiculos
+	relatorio de vendas
+	
+
+Usuario:
+	Ver os Veiculos
+	Compra Veiculo
+		Consocio de Veiculo
+		á vista
+		Financiamento
+		Leasing
