@@ -16,6 +16,7 @@ def Valida_CPF(cpf):
     if cpf == cpf[::-1]:
         return False
 
+    # Para só usar Cpfs Validos descomenta essa parte !!!
     # Valida os dois dígitos Verificadores do cpf
     #for i in range(9,11):
     #    valor = sum((cpf[num] * ((i+1) - num) for num in range(0,i)))
@@ -41,6 +42,7 @@ def Valida_CPF2():
     if cpf == cpf[::-1]:
         return False
 
+    # Para só usar Cpfs Validos descomenta essa parte !!!
     # Valida os dois dígitos Verificadores do cpf
     #for i in range(9,11):
     #    valor = sum((cpf[num] * ((i+1) - num) for num in range(0,i)))
@@ -84,15 +86,28 @@ def Cria_Cliente():
             for i in bdLista:
                 if cpf == i['cpf']:
                     print("CPF já existente!!")
-                    Cria_Cliente()
+                    resu = Cria_Cliente()
+                    if resu:
+                        return resu
+            nome = input('Digite seu Nome: ')
+            for i in bdLista:
+                if nome == i['nome']:
+                    print("Nome já existente!!")
+                    resu = Cria_Cliente()
+                    if resu:
+                        return resu
+        else:
+            nome = input('Digite seu Nome: ')
         cli = Cliente(
-            input('Digite seu Nome: '),
+            nome,
             cpf,
             input('Digite uma senha: ')
         )
     except:
         print("Erro nos dados informados!! Por Favor!! Informe os dados corretamente!! ")
-        Cria_Cliente()
+        resu = Cria_Cliente()
+        if resu:
+            return resu
     return cli
 
 def Menu1():
@@ -161,7 +176,6 @@ def up_cliente(user):
         elif opcao == 3:
             cpf = Valida_CPF2()
             if cpf:
-                print(f">>>>>>>>>> {cpf}")
                 user['cpf'] = cpf
             else:
                 print("Erro no cpf ")
@@ -179,7 +193,7 @@ def up_cliente(user):
             rep.AtualizaBD(data)
             return False
         elif opcao == 6:
-            return
+            return False
         else:
             print("Opção inalida tente novamente!!")
             continue
@@ -190,6 +204,7 @@ def Listaveiculos():
         {20*'_'}Quer ver qual lista?{20*'_'}
         1 -> Carro
         2 -> Moto
+        3 -> Voltar
         Opção >>'''))
     except:
         print('Opção invalida!!')
@@ -198,6 +213,8 @@ def Listaveiculos():
         Veic = 'CarroBD'
     elif opc == 2:
         Veic = 'MotoBD'
+    elif opc == 3:
+        return False
 
     rep = rp('RepositorioBD', Veic)
     veiculos = rep.load()
@@ -237,12 +254,12 @@ def Login():
             if i['senha'] == senha:
                 return i
             else:
-                print('Senha não conferi!!')
+                print(f'A senha {senha} não conferi!!')
                 try:
                     opc = int(input('''
-                        1 > Tentar novamente?
-                        2 > Voltar para o menu principal
-                        opção >> '''))
+                            1 > Tentar novamente?
+                            2 > Voltar para o menu principal
+                            opção >> '''))
                 except:
                     print('Valor informado invalido!\nsera direcionado para o menu principal')
                     return False
@@ -256,8 +273,8 @@ def Login():
                 else:
                     print('Valor informado invalido!\nsera direcionado para o menu principal')
                     return False
-    print('Cliente não encontrado')
-    return False
+            print('Cliente não encontrado')
+            return False
 
 def Comprar(cliente):
     try:
@@ -265,6 +282,7 @@ def Comprar(cliente):
         {20 * '_'}Qual tipo de veículo deseja Comprar?{20 * '_'}
         1-> Carro
         2-> Moto
+        3-> Voltar
         Opção >> '''))
     except:
         print('Ocorreu um erro!!')
@@ -273,6 +291,8 @@ def Comprar(cliente):
         ver = 'CarroBD'
     elif opc_compra == 2:
         ver = 'MotoBD'
+    elif opc_compra == 3:
+        return False
     else:
         print("Opção inválida!!")
 

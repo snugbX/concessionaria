@@ -34,7 +34,7 @@ if __name__ == '__main__':
                 elif opc == 3:
                     re = up_cliente(resu)
                     if not re:
-                        break
+                        continue
                 elif opc == 4:
                     break
         elif opc == 4:
