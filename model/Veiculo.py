@@ -1,7 +1,7 @@
 from abc import ABC
 
 class Veiculo(ABC):
-    def __init__(self, id, marca, modelo, motor, ano, cor, valor, status: None, quantidade_vendido: 0):
+    def __init__(self, id, marca, modelo, motor, ano, cor, valor, status = None, quantidade_vendido = 0):
         self.id = id
         self.marca = marca
         self.modelo = modelo

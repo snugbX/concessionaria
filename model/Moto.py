@@ -2,8 +2,8 @@ from model.Veiculo import Veiculo
 
 
 class Moto(Veiculo):
-    def __init__(self, id, marca, modelo, motor, ano, cor, valor):
-        super(Moto, self).__init__(id, marca, modelo, motor, ano, cor, valor)
+    def __init__(self, id, marca, modelo, motor, ano, cor, valor, status):
+        super(Moto, self).__init__(id, marca, modelo, motor, ano, cor, valor, status)
 
     def to_json(self):
         return {

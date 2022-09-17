@@ -1,6 +1,5 @@
 from model.Veiculo import Veiculo
 
-
 class Carro(Veiculo):
     def __init__(self, id, marca, modelo, motor, ano, cor, valor):
         super(Carro, self).__init__(id, marca, modelo, motor, ano, cor, valor)

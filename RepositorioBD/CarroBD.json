@@ -58,5 +58,15 @@
   "cor": "verde",
   "valor": 32900.0,
   "status": null
+ },
+ {
+  "id": 7,
+  "marca": "Fiat",
+  "modelo": "Strada",
+  "motor": "1.8",
+  "ano": 2023,
+  "cor": "laranja",
+  "valor": 59650.0,
+  "status": null
  }
 ]
