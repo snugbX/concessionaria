@@ -165,38 +165,46 @@ def up_cliente(user):
                 5 > Deletar conta
                 6 > Voltar
                 opção > """))
+
+            for i, item in enumerate(data):
+                if cpf_antigo == item['cpf']:
+                    pos = i
+
+            if opcao == 1:
+                user['nome'] = input("Informe seu novo nome: ")
+            elif opcao == 2:
+                user['senha'] = input("Informe sua nova senha: ")
+            elif opcao == 3:
+                cpf = Valida_CPF2()
+                if cpf:
+                    user['cpf'] = cpf
+                else:
+                    print("Erro no cpf ")
+                    continue
+            elif opcao == 4:
+                data[pos] = user
+                rep.AtualizaBD(data)
+                print("Alterações Realizadas com sucesso!!")
+            elif opcao == 5:
+                op = int(input(f"""
+                        Deseja realmente apagar esse veiculo? {data[pos]['nome']}
+                        1 -> Sim
+                        2 -> Não
+                        Opção >> """))
+
+                if op == 1:
+                    del(data[pos])
+                    rep.AtualizaBD(data)
+                    print("Cliente removido com sucesso!!")
+                    return 1
+            elif opcao == 6:
+                return False
+            else:
+                print("Opção invalida tente novamente!!")
+                continue
         except:
             print('Ocorreu um erro!!')
             up_cliente(user)
-
-        if opcao == 1:
-            user['nome'] = input("Informe seu novo nome: ")
-        elif opcao == 2:
-            user['senha'] = input("Informe sua nova senha: ")
-        elif opcao == 3:
-            cpf = Valida_CPF2()
-            if cpf:
-                user['cpf'] = cpf
-            else:
-                print("Erro no cpf ")
-                continue
-        elif opcao == 4:
-            for i, item in enumerate(data):
-                if cpf_antigo == item['cpf']:
-                    data[i] = user
-
-            rep.AtualizaBD(data)
-        elif opcao == 5:
-            for i, item in enumerate(data):
-                if cpf_antigo == item['cpf']:
-                    del(data[i])
-            rep.AtualizaBD(data)
-            return False
-        elif opcao == 6:
-            return False
-        else:
-            print("Opção inalida tente novamente!!")
-            continue
 
 def Listaveiculos():
     try:
@@ -242,6 +250,7 @@ def add_ClienteBD(Novo_Cliente):
     rep = rp('RepositorioBD', 'ClienteBD')
     clie = Novo_Cliente.to_json()
     rep.saveCliente(clie)
+    print("Cliente cadastrado com sucesso!!!")
 
 def Login():
     rep = rp('RepositorioBD', 'ClienteBD')
@@ -275,6 +284,9 @@ def Login():
                     return False
             print('Cliente não encontrado')
             return False
+
+    print('Cliente não encontrado')
+    return False
 
 def Comprar(cliente):
     try:

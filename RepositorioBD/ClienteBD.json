@@ -1,3 +1,14 @@
 [
-
+ {
+  "nome": "kika",
+  "cpf": "12345678965",
+  "senha": "321",
+  "compras": null
+ },
+ {
+  "nome": "maria",
+  "cpf": "12345678974",
+  "senha": "123",
+  "compras": null
+ }
 ]

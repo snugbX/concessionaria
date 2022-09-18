@@ -7,7 +7,6 @@ if __name__ == '__main__':
     while sair:
         opc = Menu1()
         if opc == 1:
-
             Listaveiculos()
 
         elif opc == 2:
@@ -33,7 +32,9 @@ if __name__ == '__main__':
 
                 elif opc == 3:
                     re = up_cliente(resu)
-                    if not re:
+                    if re == 1:
+                        break
+                    elif not re:
                         continue
                 elif opc == 4:
                     break

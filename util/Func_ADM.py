@@ -8,8 +8,9 @@ def Menu1():
             {30*'_'}Menu Principal{30*'_'}
             1 - Listar Veiculos
             2 - Cadastrar Veiculo
-            3 - Visualizar vendas
-            4 - Sair
+            3 - Alterar Veiculo
+            4 - Visualizar vendas
+            5 - Sair
         
             Digite o numero de uma das opções do menu!!
             OPÇÃO >> """))
@@ -17,7 +18,7 @@ def Menu1():
         print("Dado inserido invalido!!")
         Menu1()
 
-    if 0 < opc < 5 and opc is not None:
+    if 0 < opc < 6 and opc is not None:
         return opc
     else:
         print("Valor informado não consta no Menu!!")
@@ -115,5 +116,140 @@ def lista_vendas():
         print('Não foi encontrado nenhum, veiculo cadastrado!!')
 
 
+def up_veiculo():
+    try:
+        opc = int(input(f'''
+                    {20 * '_'}Qual Veiculo quer Alterar!{20 * '_'}
+                    1 -> Carro
+                    2 -> Moto
+                    3 -> Voltar
+                    Opção >> '''))
+    except:
+        print('opção invalida!!')
+        resu = up_veiculo()
+        return resu
 
+    if opc == 1:
+        rep = rp('RepositorioBD', 'CarroBD')
+        Lista = rep.load()
+
+        try:
+            id = int(input("Informe o Codigo do Veiculo: "))
+
+            for i, item in enumerate(Lista):
+                if id == item['id']:
+                    pos = i
+            sair = True
+            while sair:
+                opc = int(input(f'''
+                        {20 * '_'}Qual Veiculo quer Alterar!{20 * '_'}
+                        1 -> Marca
+                        2 -> Modelo
+                        3 -> Motor
+                        4 -> Ano
+                        5 -> Cor
+                        6 -> Valor
+                        7 -> Salvar Alterações
+                        8 -> Apagar Veiculo
+                        9 -> Voltar
+                        Opção >> '''))
+
+                if opc == 1:
+                    Lista[pos]['marca'] = input("Digite a nova marca: ")
+                elif opc == 2:
+                    Lista[pos]['modelo'] = input("Digite o novo modelo: ")
+                elif opc == 3:
+                    Lista[pos]['motor'] = input("Digite o novo motor: ")
+                elif opc == 4:
+                    Lista[pos]['ano'] = input("Digite o ano: ")
+                elif opc == 5:
+                    Lista[pos]['cor'] = input("Digite a nova cor: ")
+                elif opc == 6:
+                    Lista[pos]['valor'] = input("Digite o novo Valor: ")
+                elif opc == 7:
+                    rep.AtualizaBD(Lista)
+                    print("Alterações Realizadas com sucesso!!")
+                elif opc == 8:
+                    op = int(input(f"""
+                    Deseja realmente apagar esse veiculo? {Lista[pos]['modelo']}
+                    1 -> Sim
+                    2 -> Não
+                    Opção >> """))
+
+                    if op == 1:
+                        del(Lista[pos])
+                        rep.AtualizaBD(Lista)
+                        print("Veiculo removido com sucesso!!")
+                        return False
+                    else:
+                        continue
+                elif opc == 9:
+                    return False
+        except:
+            print('opção invalida!!')
+            resu = up_veiculo()
+            return resu
+
+    elif opc == 2:
+        rep = rp('RepositorioBD', 'MotoBD')
+        Lista = rep.load()
+
+        try:
+            id = int(input("Informe o Codigo do Veiculo: "))
+
+            for i, item in enumerate(Lista):
+                if id == item['id']:
+                    pos = i
+            sair = True
+            while sair:
+                opc = int(input(f'''
+                        {20 * '_'}Qual Veiculo quer Alterar!{20 * '_'}
+                        1 -> Marca
+                        2 -> Modelo
+                        3 -> Motor
+                        4 -> Ano
+                        5 -> Cor
+                        6 -> Valor
+                        7 -> Salvar Alterações
+                        8 -> Apagar Veiculo
+                        9 -> Voltar
+                        Opção >> '''))
+
+                if opc == 1:
+                    Lista[pos]['marca'] = input("Digite a nova marca: ")
+                elif opc == 2:
+                    Lista[pos]['modelo'] = input("Digite o novo modelo: ")
+                elif opc == 3:
+                    Lista[pos]['motor'] = input("Digite o novo motor: ")
+                elif opc == 4:
+                    Lista[pos]['ano'] = input("Digite o ano: ")
+                elif opc == 5:
+                    Lista[pos]['cor'] = input("Digite a nova cor: ")
+                elif opc == 6:
+                    Lista[pos]['valor'] = input("Digite o novo Valor: ")
+                elif opc == 7:
+                    rep.AtualizaBD(Lista)
+                    print("Alterações Realizadas com sucesso!!")
+                elif opc == 8:
+                    op = int(input(f"""
+                    Deseja realmente apagar esse veiculo? {Lista[pos]['modelo']}
+                    1 -> Sim
+                    2 -> Não
+                    Opção >> """))
+
+                    if op == 1:
+                        del(Lista[pos])
+                        rep.AtualizaBD(Lista)
+                        print("Veiculo removido com sucesso!!")
+                        return False
+                    else:
+                        continue
+                elif opc == 9:
+                    return False
+        except:
+            print('opção invalida!!')
+            resu = up_veiculo()
+            return resu
+    else:
+        return False
 

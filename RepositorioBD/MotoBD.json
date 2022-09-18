@@ -38,15 +38,5 @@
   "cor": "prata",
   "valor": 48440.0,
   "status": null
- },
- {
-  "id": 5,
-  "marca": "Honda",
-  "modelo": "CG 160 Fan",
-  "motor": "OHC 162,7 cc",
-  "ano": 2022,
-  "cor": "verde",
-  "valor": 13880.0,
-  "status": null
  }
 ]
