@@ -9,7 +9,7 @@
 
 ## Author
 
-👤 **Everlan Santos**
+👤 **Everlan Santos**, **Beatriz Brito**
 
 * Github: [@snugbX](https://github.com/snugbX)
 * LinkedIn: [@EverlanDev](https://www.linkedin.com/in/EverlanDev)
